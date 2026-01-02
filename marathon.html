@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="google-adsense-account" content="ca-pub-1444806058054597">
+    <meta name="google-site-verification" content="dTqO7Uk2-R0kvPyuzQKQccwXh4LPu_85SKqxiZAd72g" />
+
+    <title>KADENCE | Préparation Marathon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #833ab4;
+            --secondary: #00d4ff;
+            --dark: #000000;
+            --card-bg: #0a0a0a;
+            --text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--dark); color: var(--text); line-height: 1.6; }
+
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 15px 5%;
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .logo { font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white; }
+        .logo span { color: var(--secondary); }
+
+        header {
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), var(--dark)), url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; text-align: center; padding: 20px;
+        }
+
+        section { padding: 60px 10%; }
+        .plan-week { background: var(--card-bg); border: 1px solid #1a1a1a; border-radius: 20px; padding: 30px; margin-bottom: 20px; }
+        .week-title { color: var(--secondary); font-weight: 900; font-size: 1.5rem; margin-bottom: 15px; }
+        
+        .session { border-left: 3px solid var(--primary); padding-left: 20px; margin-bottom: 15px; }
+        .session h4 { color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        .back-btn {
+            display: inline-block; padding: 10px 20px; border: 1px solid white;
+            color: white; text-decoration: none; border-radius: 100px; font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: white; color: black; }
+
+        footer { text-align: center; padding: 40px; opacity: 0.3; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">KAD<span>ENCE</span></a>
+        <a href="index.html" class="back-btn">RETOUR</a>
+    </nav>
+
+    <header>
+        <h1 style="font-size: 4rem; font-weight: 900;">PLAN MARATHON</h1>
+        <p style="color: var(--secondary); letter-spacing: 3px;">12 SEMAINES VERS LA LÉGENDE</p>
+    </header>
+
+    <section>
+        <div class="plan-week">
+            <div class="week-title">SEMAINE 1-4 : FONDATIONS</div>
+            <div class="session">
+                <h4>Mardi : Fractionné court</h4>
+                <p>2 x 10 x 30s rapide / 30s lent. Objectif : Réveiller le cardio.</p>
+            </div>
+            <div class="session">
+                <h4>Jeudi : Endurance Fondamentale</h4>
+                <p>45 min à allure très facile. Vous devez pouvoir parler.</p>
+            </div>
+            <div class="session">
+                <h4>Dimanche : Sortie Longue</h4>
+                <p>1h15 à 1h30. Rythme régulier, focus sur la gestion du souffle.</p>
+            </div>
+        </div>
+
+        <div class="plan-week">
+            <div class="week-title">SEMAINE 5-8 : PUISSANCE</div>
+            <div class="session">
+                <h4>Mardi : VMA Longue</h4>
+                <p>5 x 800m à 95% de votre vitesse max.</p>
+            </div>
+            <div class="session">
+                <h4>Jeudi : Seuil</h4>
+                <p>2 x 15 min à l'allure visée pour votre marathon.</p>
+            </div>
+            <div class="session">
+                <h4>Dimanche : Sortie Longue +</h4>
+                <p>1h45 à 2h15. Intégrer 30 min à allure marathon au milieu.</p>
+            </div>
+        </div>
+
+        <div class="plan-week">
+            <div class="week-title">SEMAINE 9-12 : AFFÛTAGE</div>
+            <p>On réduit le volume, on garde l'intensité. L'objectif est d'arriver avec une fraîcheur maximale.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 KADENCE - S'entraîner avec intelligence.
+    </footer>
+
+</body>
+</html>
