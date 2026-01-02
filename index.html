@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KADENCE | De 5km au Marathon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #833ab4;
+            --secondary: #00d4ff;
+            --dark: #050505;
+            --gray: #121214;
+            --text: #ffffff;
+            --accent: #ff007b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--dark); color: var(--text); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(20px); z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .logo { font-weight: 900; font-size: 1.8rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; opacity: 0.7; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--secondary); }
+
+        /* Hero */
+        header {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), var(--dark)), url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center; text-align: center; padding: 20px;
+        }
+        h1 { font-size: clamp(3.5rem, 12vw, 9rem); font-weight: 900; line-height: 0.8; letter-spacing: -4px; margin-bottom: 20px; }
+        header p { font-size: 1.3rem; max-width: 700px; opacity: 0.8; margin-bottom: 40px; font-weight: 300; }
+
+        /* Sections */
+        section { padding: 100px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .section-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 50px; text-align: center; }
+        .section-title span { color: var(--secondary); }
+
+        /* Grid des Plans */
+        .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .plan-card {
+            background: var(--gray); padding: 30px; border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.05); transition: 0.3s ease;
+            display: flex; flex-direction: column;
+        }
+        .plan-card:hover { border-color: var(--secondary); transform: translateY(-10px); background: #1a1a1d; }
+        .plan-card h3 { font-size: 1.8rem; margin: 15px 0; color: #fff; }
+        .plan-tag { font-size: 0.7rem; font-weight: 900; padding: 5px 12px; border-radius: 50px; background: var(--primary); width: fit-content; text-transform: uppercase; }
+        .plan-details { list-style: none; margin-top: 20px; flex-grow: 1; }
+        .plan-details li { font-size: 0.9rem; margin-bottom: 12px; opacity: 0.8; padding-left: 20px; position: relative; }
+        .plan-details li::before { content: '◈'; position: absolute; left: 0; color: var(--secondary); }
+
+        /* Section Focus Marathon */
+        .focus-marathon {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; background-attachment: fixed; border-radius: 50px; padding: 80px 50px; margin: 50px 0;
+        }
+
+        /* Outils */
+        .tool-card { background: #000; padding: 40px; border-radius: 40px; border: 1px solid var(--primary); max-width: 600px; margin: 0 auto; }
+        input { width: 100%; padding: 18px; background: #111; border: 1px solid #333; color: #fff; border-radius: 12px; margin: 15px 0; font-size: 1rem; }
+        .btn { width: 100%; padding: 18px; background: var(--secondary); border: none; border-radius: 12px; font-weight: 900; cursor: pointer; transition: 0.3s; }
+        .btn:hover { letter-spacing: 2px; box-shadow: 0 0 20px var(--secondary); }
+
+        footer { text-align: center; padding: 60px; opacity: 0.4; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">KADENCE.</div>
+        <div class="nav-links">
+            <a href="#plans">Programmes</a>
+            <a href="#mental">Mental</a>
+            <a href="#calcul">Calculateur</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>CONQUER<br>THE DISTANCE</h1>
+        <p>Du premier kilomètre aux 42,195 km de légende. Nous avons le plan, vous avez la volonté.</p>
+        <a href="#plans" class="btn" style="width: auto; padding: 18px 40px;">Choisir mon défi</a>
+    </header>
+
+    <section id="plans">
+        <h2 class="section-title">Programmes <span>Sur-Mesure</span></h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-tag">Santé</div>
+                <h3>Objectif 5K</h3>
+                <ul class="plan-details">
+                    <li>Idéal pour débuter le running.</li>
+                    <li>3 séances par semaine (30-40 min).</li>
+                    <li>Focus : Endurance fondamentale.</li>
+                    <li>Durée : 6 à 8 semaines.</li>
+                </ul>
+            </div>
+            <div class="plan-card">
+                <div class="plan-tag">Vitesse</div>
+                <h3>Objectif 10K</h3>
+                <ul class="plan-details">
+                    <li>Premier pas vers la compétition.</li>
+                    <li>Introduction au fractionné court.</li>
+                    <li>Travail de la foulée et du souffle.</li>
+                    <li>Durée : 8 à 10 semaines.</li>
+                </ul>
+            </div>
+            <div class="plan-card">
+                <div class="plan-tag">Endurance</div>
+                <h3>Semi-Marathon</h3>
+                <ul class="plan-details">
+                    <li>La distance préférée des coureurs.</li>
+                    <li>Sorties longues (jusqu'à 1h45).</li>
+                    <li>Travail de l'allure spécifique (AS21).</li>
+                    <li>Durée : 10 à 12 semaines.</li>
+                </ul>
+            </div>
+            <div class="plan-card">
+                <div class="plan-tag">Légende</div>
+                <h3>Marathon</h3>
+                <ul class="plan-details">
+                    <li>Le défi d'une vie (42,195 km).</li>
+                    <li>Volume hebdomadaire élevé (40km+).</li>
+                    <li>Gestion du "Mur" et de la nutrition.</li>
+                    <li>Durée : 12 à 16 semaines.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="mental">
+        <div class="focus-marathon">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">L'Esprit du Long</h2>
+            <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 30px;">
+                Courir un marathon, c'est 80% de préparation physique et 20% de résilience mentale. 
+                Le "Mur" des 30 km n'est pas une fatalité, c'est le moment où votre esprit prend le relais sur vos jambes. 
+                Chez <strong>KADENCE</strong>, nous vous apprenons à visualiser la ligne d'arrivée pour transformer la fatigue en force.
+            </p>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; flex: 1; min-width: 200px;">
+                    <h4 style="color: var(--secondary);">Affûtage</h4>
+                    <p style="font-size: 0.9rem;">Réduisez le volume 2 semaines avant pour arriver frais.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; flex: 1; min-width: 200px;">
+                    <h4 style="color: var(--secondary);">Hydratation</h4>
+                    <p style="font-size: 0.9rem;">Buvez par petites gorgées tous les 5 km, n'attendez pas la soif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calcul">
+        <h2 class="section-title">Calculateur de <span>Course</span></h2>
+        <div class="tool-card">
+            <label>Distance à parcourir (km)</label>
+            <input type="number" id="dist" placeholder="Ex: 21.1 ou 42.2">
+            <label>Temps visé (en minutes)</label>
+            <input type="number" id="time" placeholder="Ex: 120 pour 2h00">
+            <button class="btn" onclick="analyser()">CALCULER MON ALLURE</button>
+            <div id="result" style="margin-top: 25px; text-align: center; font-size: 1.3rem;"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>KADENCE RUNNING PROJECT - 2026</p>
+        <p>S'entraîner intelligemment. Courir librement.</p>
+    </footer>
+
+    <script>
+        function analyser() {
+            const d = document.getElementById('dist').value;
+            const t = document.getElementById('time').value;
+            const res = document.getElementById('result');
+            
+            if(d > 0 && t > 0) {
+                const pace = t / d;
+                const min = Math.floor(pace);
+                const sec = Math.round((pace - min) * 60);
+                const secP = sec < 10 ? '0'+sec : sec;
+                const kmh = (60 / pace).toFixed(2);
+
+                res.innerHTML = `
+                    <div style="color: var(--secondary); font-weight: 900; font-size: 2rem;">${min}:${secP} min/km</div>
+                    <div style="opacity: 0.7; font-size: 1rem;">Soit une vitesse de ${kmh} km/h</div>
+                `;
+            } else {
+                res.innerHTML = "Veuillez entrer des chiffres valides !";
+            }
+        }
+    </script>
+</body>
+</html>
